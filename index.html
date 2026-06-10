@@ -564,18 +564,11 @@
       align-items: center;
       justify-content: center;
       height: 48px;
+      color: rgba(255,255,255,0.45);
+      transition: color 0.25s ease;
     }
-    .brand-item img {
-      height: 36px;
-      width: auto;
-      max-width: 100px;
-      object-fit: contain;
-      filter: grayscale(1) opacity(0.55);
-      transition: filter 0.25s ease;
-    }
-    .brand-item img:hover {
-      filter: grayscale(0) opacity(1);
-    }
+    .brand-item:hover { color: var(--yellow); }
+    .brand-item svg { height: 28px; width: auto; }
 
     /* ── Safe-area for iOS notch ────────────────────── */
     @supports (padding: max(0px)) {
@@ -672,37 +665,55 @@
   <!-- ── Car Brands Carousel ── -->
   <div class="brands-bar" aria-label="Car brands we service">
     <div class="brands-track">
-      <div class="brand-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Toyota_logo_2020.svg/200px-Toyota_logo_2020.svg.png" alt="Toyota"></div>
-      <div class="brand-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Ford_Motor_Company_Logo.svg/200px-Ford_Motor_Company_Logo.svg.png" alt="Ford"></div>
-      <div class="brand-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Chevrolet_logo.svg/200px-Chevrolet_logo.svg.png" alt="Chevrolet"></div>
-      <div class="brand-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Honda_logo.svg/200px-Honda_logo.svg.png" alt="Honda"></div>
-      <div class="brand-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/BMW.svg/200px-BMW.svg.png" alt="BMW"></div>
-      <div class="brand-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Mercedes_benz_logo.svg/200px-Mercedes_benz_logo.svg.png" alt="Mercedes-Benz"></div>
-      <div class="brand-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Audi-logo.svg/200px-Audi-logo.svg.png" alt="Audi"></div>
-      <div class="brand-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Nissan_logo.svg/200px-Nissan_logo.svg.png" alt="Nissan"></div>
-      <div class="brand-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Hyundai_Motor_Company_logo.svg/200px-Hyundai_Motor_Company_logo.svg.png" alt="Hyundai"></div>
-      <div class="brand-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Volkswagen_logo_2019.svg/200px-Volkswagen_logo_2019.svg.png" alt="Volkswagen"></div>
-      <div class="brand-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Kia-logo.svg/200px-Kia-logo.svg.png" alt="Kia"></div>
-      <div class="brand-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Subaru_logo.svg/200px-Subaru_logo.svg.png" alt="Subaru"></div>
-      <div class="brand-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Jeep_logo.svg/200px-Jeep_logo.svg.png" alt="Jeep"></div>
-      <div class="brand-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Dodge_logo.svg/200px-Dodge_logo.svg.png" alt="Dodge"></div>
-      <div class="brand-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Mazda_logo.svg/200px-Mazda_logo.svg.png" alt="Mazda"></div>
-      <!-- Duplicate set for seamless infinite loop -->
-      <div class="brand-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Toyota_logo_2020.svg/200px-Toyota_logo_2020.svg.png" alt="Toyota"></div>
-      <div class="brand-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Ford_Motor_Company_Logo.svg/200px-Ford_Motor_Company_Logo.svg.png" alt="Ford"></div>
-      <div class="brand-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Chevrolet_logo.svg/200px-Chevrolet_logo.svg.png" alt="Chevrolet"></div>
-      <div class="brand-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Honda_logo.svg/200px-Honda_logo.svg.png" alt="Honda"></div>
-      <div class="brand-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/BMW.svg/200px-BMW.svg.png" alt="BMW"></div>
-      <div class="brand-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Mercedes_benz_logo.svg/200px-Mercedes_benz_logo.svg.png" alt="Mercedes-Benz"></div>
-      <div class="brand-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Audi-logo.svg/200px-Audi-logo.svg.png" alt="Audi"></div>
-      <div class="brand-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Nissan_logo.svg/200px-Nissan_logo.svg.png" alt="Nissan"></div>
-      <div class="brand-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Hyundai_Motor_Company_logo.svg/200px-Hyundai_Motor_Company_logo.svg.png" alt="Hyundai"></div>
-      <div class="brand-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Volkswagen_logo_2019.svg/200px-Volkswagen_logo_2019.svg.png" alt="Volkswagen"></div>
-      <div class="brand-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Kia-logo.svg/200px-Kia-logo.svg.png" alt="Kia"></div>
-      <div class="brand-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Subaru_logo.svg/200px-Subaru_logo.svg.png" alt="Subaru"></div>
-      <div class="brand-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Jeep_logo.svg/200px-Jeep_logo.svg.png" alt="Jeep"></div>
-      <div class="brand-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Dodge_logo.svg/200px-Dodge_logo.svg.png" alt="Dodge"></div>
-      <div class="brand-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Mazda_logo.svg/200px-Mazda_logo.svg.png" alt="Mazda"></div>
+
+      <!-- Toyota -->
+      <div class="brand-item" title="Toyota"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 206 80" height="36" fill="currentColor"><text x="0" y="60" font-family="Arial Black,sans-serif" font-size="52" font-weight="900" letter-spacing="-2">TOYOTA</text></svg></div>
+      <!-- Ford -->
+      <div class="brand-item" title="Ford"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 80" height="36" fill="currentColor"><text x="0" y="62" font-family="Arial Black,sans-serif" font-size="60" font-weight="900" letter-spacing="-2">FORD</text></svg></div>
+      <!-- Chevrolet -->
+      <div class="brand-item" title="Chevrolet"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" height="36" fill="currentColor"><text x="0" y="60" font-family="Arial Black,sans-serif" font-size="44" font-weight="900" letter-spacing="-1">CHEVROLET</text></svg></div>
+      <!-- Honda -->
+      <div class="brand-item" title="Honda"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 175 80" height="36" fill="currentColor"><text x="0" y="62" font-family="Arial Black,sans-serif" font-size="54" font-weight="900" letter-spacing="-2">HONDA</text></svg></div>
+      <!-- BMW -->
+      <div class="brand-item" title="BMW"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 80" height="36" fill="currentColor"><text x="0" y="64" font-family="Arial Black,sans-serif" font-size="64" font-weight="900" letter-spacing="0">BMW</text></svg></div>
+      <!-- Mercedes-Benz -->
+      <div class="brand-item" title="Mercedes-Benz"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 80" height="36" fill="currentColor"><text x="0" y="58" font-family="Arial Black,sans-serif" font-size="38" font-weight="900" letter-spacing="-1">MERCEDES</text></svg></div>
+      <!-- Audi -->
+      <div class="brand-item" title="Audi"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 80" height="36" fill="currentColor"><text x="0" y="63" font-family="Arial Black,sans-serif" font-size="60" font-weight="900" letter-spacing="-2">AUDI</text></svg></div>
+      <!-- Nissan -->
+      <div class="brand-item" title="Nissan"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 80" height="36" fill="currentColor"><text x="0" y="62" font-family="Arial Black,sans-serif" font-size="52" font-weight="900" letter-spacing="-2">NISSAN</text></svg></div>
+      <!-- Hyundai -->
+      <div class="brand-item" title="Hyundai"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 80" height="36" fill="currentColor"><text x="0" y="60" font-family="Arial Black,sans-serif" font-size="48" font-weight="900" letter-spacing="-2">HYUNDAI</text></svg></div>
+      <!-- Volkswagen -->
+      <div class="brand-item" title="Volkswagen"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 270 80" height="36" fill="currentColor"><text x="0" y="58" font-family="Arial Black,sans-serif" font-size="40" font-weight="900" letter-spacing="-1">VOLKSWAGEN</text></svg></div>
+      <!-- Kia -->
+      <div class="brand-item" title="Kia"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 80" height="36" fill="currentColor"><text x="0" y="64" font-family="Arial Black,sans-serif" font-size="64" font-weight="900" letter-spacing="-2">KIA</text></svg></div>
+      <!-- Subaru -->
+      <div class="brand-item" title="Subaru"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 185 80" height="36" fill="currentColor"><text x="0" y="62" font-family="Arial Black,sans-serif" font-size="52" font-weight="900" letter-spacing="-2">SUBARU</text></svg></div>
+      <!-- Jeep -->
+      <div class="brand-item" title="Jeep"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 80" height="36" fill="currentColor"><text x="0" y="63" font-family="Arial Black,sans-serif" font-size="60" font-weight="900" letter-spacing="-2">JEEP</text></svg></div>
+      <!-- Dodge -->
+      <div class="brand-item" title="Dodge"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 80" height="36" fill="currentColor"><text x="0" y="62" font-family="Arial Black,sans-serif" font-size="54" font-weight="900" letter-spacing="-2">DODGE</text></svg></div>
+      <!-- Mazda -->
+      <div class="brand-item" title="Mazda"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 175 80" height="36" fill="currentColor"><text x="0" y="62" font-family="Arial Black,sans-serif" font-size="54" font-weight="900" letter-spacing="-2">MAZDA</text></svg></div>
+
+      <!-- Duplicate set for seamless loop -->
+      <div class="brand-item" title="Toyota"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 206 80" height="36" fill="currentColor"><text x="0" y="60" font-family="Arial Black,sans-serif" font-size="52" font-weight="900" letter-spacing="-2">TOYOTA</text></svg></div>
+      <div class="brand-item" title="Ford"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 80" height="36" fill="currentColor"><text x="0" y="62" font-family="Arial Black,sans-serif" font-size="60" font-weight="900" letter-spacing="-2">FORD</text></svg></div>
+      <div class="brand-item" title="Chevrolet"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" height="36" fill="currentColor"><text x="0" y="60" font-family="Arial Black,sans-serif" font-size="44" font-weight="900" letter-spacing="-1">CHEVROLET</text></svg></div>
+      <div class="brand-item" title="Honda"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 175 80" height="36" fill="currentColor"><text x="0" y="62" font-family="Arial Black,sans-serif" font-size="54" font-weight="900" letter-spacing="-2">HONDA</text></svg></div>
+      <div class="brand-item" title="BMW"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 80" height="36" fill="currentColor"><text x="0" y="64" font-family="Arial Black,sans-serif" font-size="64" font-weight="900" letter-spacing="0">BMW</text></svg></div>
+      <div class="brand-item" title="Mercedes-Benz"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 80" height="36" fill="currentColor"><text x="0" y="58" font-family="Arial Black,sans-serif" font-size="38" font-weight="900" letter-spacing="-1">MERCEDES</text></svg></div>
+      <div class="brand-item" title="Audi"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 80" height="36" fill="currentColor"><text x="0" y="63" font-family="Arial Black,sans-serif" font-size="60" font-weight="900" letter-spacing="-2">AUDI</text></svg></div>
+      <div class="brand-item" title="Nissan"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 80" height="36" fill="currentColor"><text x="0" y="62" font-family="Arial Black,sans-serif" font-size="52" font-weight="900" letter-spacing="-2">NISSAN</text></svg></div>
+      <div class="brand-item" title="Hyundai"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 80" height="36" fill="currentColor"><text x="0" y="60" font-family="Arial Black,sans-serif" font-size="48" font-weight="900" letter-spacing="-2">HYUNDAI</text></svg></div>
+      <div class="brand-item" title="Volkswagen"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 270 80" height="36" fill="currentColor"><text x="0" y="58" font-family="Arial Black,sans-serif" font-size="40" font-weight="900" letter-spacing="-1">VOLKSWAGEN</text></svg></div>
+      <div class="brand-item" title="Kia"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 80" height="36" fill="currentColor"><text x="0" y="64" font-family="Arial Black,sans-serif" font-size="64" font-weight="900" letter-spacing="-2">KIA</text></svg></div>
+      <div class="brand-item" title="Subaru"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 185 80" height="36" fill="currentColor"><text x="0" y="62" font-family="Arial Black,sans-serif" font-size="52" font-weight="900" letter-spacing="-2">SUBARU</text></svg></div>
+      <div class="brand-item" title="Jeep"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 80" height="36" fill="currentColor"><text x="0" y="63" font-family="Arial Black,sans-serif" font-size="60" font-weight="900" letter-spacing="-2">JEEP</text></svg></div>
+      <div class="brand-item" title="Dodge"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 80" height="36" fill="currentColor"><text x="0" y="62" font-family="Arial Black,sans-serif" font-size="54" font-weight="900" letter-spacing="-2">DODGE</text></svg></div>
+      <div class="brand-item" title="Mazda"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 175 80" height="36" fill="currentColor"><text x="0" y="62" font-family="Arial Black,sans-serif" font-size="54" font-weight="900" letter-spacing="-2">MAZDA</text></svg></div>
+
     </div>
   </div>
 
