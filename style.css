@@ -1609,3 +1609,63 @@ footer {
     animation: none;
   }
 }
+
+/* ─── CAR BRANDS CAROUSEL ────────────────────────────────────────── */
+.brands-bar {
+  background: var(--black);
+  padding: 22px 0;
+  overflow: hidden;
+  border-top: 2px solid var(--yellow);
+  border-bottom: 2px solid var(--yellow);
+  position: relative;
+}
+
+/* fade edges */
+.brands-bar::before,
+.brands-bar::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+.brands-bar::before { left: 0;  background: linear-gradient(to right, var(--black), transparent); }
+.brands-bar::after  { right: 0; background: linear-gradient(to left,  var(--black), transparent); }
+
+.brands-track {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  width: max-content;
+  animation: brandsScroll 30s linear infinite;
+}
+
+.brands-track:hover { animation-play-state: paused; }
+
+.brand-item {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.55;
+  transition: opacity 0.3s;
+  filter: brightness(0) invert(1);
+}
+
+.brand-item:hover { opacity: 1; }
+
+.brand-item img {
+  height: 36px;
+  width: auto;
+  display: block;
+}
+
+@keyframes brandsScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brands-track { animation: none; }
+}
