@@ -538,23 +538,36 @@
       .hero-btns a { width: 100%; max-width: 280px; text-align: center; }
     }
 
-    /* ── Car Brands Carousel ────────────────────────── */
+    /* ── Parts Suppliers Carousel ───────────────────── */
     .brands-bar {
-      background: var(--white);
-      padding: 20px 0;
+      background: var(--black);
+      padding: 0;
       overflow: hidden;
-      border-top: 1px solid #eee;
-      border-bottom: 1px solid #eee;
+      position: relative;
+      border-top: 3px solid var(--yellow);
+      border-bottom: 3px solid var(--yellow);
     }
+    .brands-bar::before,
+    .brands-bar::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 120px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .brands-bar::before { left: 0; background: linear-gradient(to right, var(--black) 0%, transparent 100%); }
+    .brands-bar::after  { right: 0; background: linear-gradient(to left,  var(--black) 0%, transparent 100%); }
     .brands-track {
       display: flex;
-      gap: 48px;
       align-items: center;
+      gap: 0;
       width: max-content;
-      animation: scroll-brands 30s linear infinite;
+      animation: marquee 35s linear infinite;
+      will-change: transform;
     }
     .brands-track:hover { animation-play-state: paused; }
-    @keyframes scroll-brands {
+    @keyframes marquee {
       0%   { transform: translateX(0); }
       100% { transform: translateX(-50%); }
     }
@@ -563,12 +576,23 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 48px;
-      color: rgba(255,255,255,0.45);
-      transition: color 0.25s ease;
+      height: 72px;
+      padding: 0 36px;
+      border-right: 1px solid rgba(255,255,255,0.08);
+      cursor: default;
     }
-    .brand-item:hover { color: var(--yellow); }
-    .brand-item svg { height: 28px; width: auto; }
+    .brand-item span {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 18px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      white-space: nowrap;
+      transition: color 0.25s ease;
+      user-select: none;
+    }
+    .brand-item:hover span { color: var(--yellow); }
 
     /* ── Safe-area for iOS notch ────────────────────── */
     @supports (padding: max(0px)) {
@@ -665,74 +689,41 @@
   <!-- ── Parts & Suppliers Carousel ── -->
   <div class="brands-bar" aria-label="Trusted parts and material suppliers">
     <div class="brands-track">
-
-      <div class="brand-item" title="Bosch">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 60" height="32" fill="currentColor"><text x="0" y="46" font-family="Arial Black,sans-serif" font-size="46" font-weight="900" letter-spacing="-1">BOSCH</text></svg>
-      </div>
-      <div class="brand-item" title="Mobil 1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 60" height="32" fill="currentColor"><text x="0" y="46" font-family="Arial Black,sans-serif" font-size="46" font-weight="900" letter-spacing="-1">MOBIL 1</text></svg>
-      </div>
-      <div class="brand-item" title="ACDelco">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 60" height="32" fill="currentColor"><text x="0" y="46" font-family="Arial Black,sans-serif" font-size="46" font-weight="900" letter-spacing="-1">ACDELCO</text></svg>
-      </div>
-      <div class="brand-item" title="Monroe">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 60" height="32" fill="currentColor"><text x="0" y="46" font-family="Arial Black,sans-serif" font-size="46" font-weight="900" letter-spacing="-1">MONROE</text></svg>
-      </div>
-      <div class="brand-item" title="Gates">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 60" height="32" fill="currentColor"><text x="0" y="46" font-family="Arial Black,sans-serif" font-size="46" font-weight="900" letter-spacing="-1">GATES</text></svg>
-      </div>
-      <div class="brand-item" title="Dorman">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" height="32" fill="currentColor"><text x="0" y="46" font-family="Arial Black,sans-serif" font-size="46" font-weight="900" letter-spacing="-1">DORMAN</text></svg>
-      </div>
-      <div class="brand-item" title="Moog">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 60" height="32" fill="currentColor"><text x="0" y="46" font-family="Arial Black,sans-serif" font-size="46" font-weight="900" letter-spacing="-1">MOOG</text></svg>
-      </div>
-      <div class="brand-item" title="Denso">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 60" height="32" fill="currentColor"><text x="0" y="46" font-family="Arial Black,sans-serif" font-size="46" font-weight="900" letter-spacing="-1">DENSO</text></svg>
-      </div>
-      <div class="brand-item" title="NGK">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 60" height="32" fill="currentColor"><text x="0" y="46" font-family="Arial Black,sans-serif" font-size="46" font-weight="900" letter-spacing="-1">NGK</text></svg>
-      </div>
-      <div class="brand-item" title="Castrol">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 60" height="32" fill="currentColor"><text x="0" y="46" font-family="Arial Black,sans-serif" font-size="46" font-weight="900" letter-spacing="-1">CASTROL</text></svg>
-      </div>
-      <div class="brand-item" title="Motorcraft">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 60" height="32" fill="currentColor"><text x="0" y="46" font-family="Arial Black,sans-serif" font-size="46" font-weight="900" letter-spacing="-1">MOTORCRAFT</text></svg>
-      </div>
-      <div class="brand-item" title="Raybestos">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 245 60" height="32" fill="currentColor"><text x="0" y="46" font-family="Arial Black,sans-serif" font-size="46" font-weight="900" letter-spacing="-1">RAYBESTOS</text></svg>
-      </div>
-      <div class="brand-item" title="Fel-Pro">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 60" height="32" fill="currentColor"><text x="0" y="46" font-family="Arial Black,sans-serif" font-size="46" font-weight="900" letter-spacing="-1">FEL-PRO</text></svg>
-      </div>
-      <div class="brand-item" title="WD-40">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 60" height="32" fill="currentColor"><text x="0" y="46" font-family="Arial Black,sans-serif" font-size="46" font-weight="900" letter-spacing="-1">WD-40</text></svg>
-      </div>
-      <div class="brand-item" title="3M">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 60" height="32" fill="currentColor"><text x="0" y="46" font-family="Arial Black,sans-serif" font-size="56" font-weight="900" letter-spacing="-1">3M</text></svg>
-      </div>
-
-      <!-- Duplicate set for seamless loop -->
-      <div class="brand-item" title="Bosch"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 60" height="32" fill="currentColor"><text x="0" y="46" font-family="Arial Black,sans-serif" font-size="46" font-weight="900" letter-spacing="-1">BOSCH</text></svg></div>
-      <div class="brand-item" title="Mobil 1"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 60" height="32" fill="currentColor"><text x="0" y="46" font-family="Arial Black,sans-serif" font-size="46" font-weight="900" letter-spacing="-1">MOBIL 1</text></svg></div>
-      <div class="brand-item" title="ACDelco"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 60" height="32" fill="currentColor"><text x="0" y="46" font-family="Arial Black,sans-serif" font-size="46" font-weight="900" letter-spacing="-1">ACDELCO</text></svg></div>
-      <div class="brand-item" title="Monroe"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 60" height="32" fill="currentColor"><text x="0" y="46" font-family="Arial Black,sans-serif" font-size="46" font-weight="900" letter-spacing="-1">MONROE</text></svg></div>
-      <div class="brand-item" title="Gates"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 60" height="32" fill="currentColor"><text x="0" y="46" font-family="Arial Black,sans-serif" font-size="46" font-weight="900" letter-spacing="-1">GATES</text></svg></div>
-      <div class="brand-item" title="Dorman"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" height="32" fill="currentColor"><text x="0" y="46" font-family="Arial Black,sans-serif" font-size="46" font-weight="900" letter-spacing="-1">DORMAN</text></svg></div>
-      <div class="brand-item" title="Moog"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 60" height="32" fill="currentColor"><text x="0" y="46" font-family="Arial Black,sans-serif" font-size="46" font-weight="900" letter-spacing="-1">MOOG</text></svg></div>
-      <div class="brand-item" title="Denso"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 60" height="32" fill="currentColor"><text x="0" y="46" font-family="Arial Black,sans-serif" font-size="46" font-weight="900" letter-spacing="-1">DENSO</text></svg></div>
-      <div class="brand-item" title="NGK"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 60" height="32" fill="currentColor"><text x="0" y="46" font-family="Arial Black,sans-serif" font-size="46" font-weight="900" letter-spacing="-1">NGK</text></svg></div>
-      <div class="brand-item" title="Castrol"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 60" height="32" fill="currentColor"><text x="0" y="46" font-family="Arial Black,sans-serif" font-size="46" font-weight="900" letter-spacing="-1">CASTROL</text></svg></div>
-      <div class="brand-item" title="Motorcraft"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 60" height="32" fill="currentColor"><text x="0" y="46" font-family="Arial Black,sans-serif" font-size="46" font-weight="900" letter-spacing="-1">MOTORCRAFT</text></svg></div>
-      <div class="brand-item" title="Raybestos"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 245 60" height="32" fill="currentColor"><text x="0" y="46" font-family="Arial Black,sans-serif" font-size="46" font-weight="900" letter-spacing="-1">RAYBESTOS</text></svg></div>
-      <div class="brand-item" title="Fel-Pro"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 60" height="32" fill="currentColor"><text x="0" y="46" font-family="Arial Black,sans-serif" font-size="46" font-weight="900" letter-spacing="-1">FEL-PRO</text></svg></div>
-      <div class="brand-item" title="WD-40"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 60" height="32" fill="currentColor"><text x="0" y="46" font-family="Arial Black,sans-serif" font-size="46" font-weight="900" letter-spacing="-1">WD-40</text></svg></div>
-      <div class="brand-item" title="3M"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 60" height="32" fill="currentColor"><text x="0" y="46" font-family="Arial Black,sans-serif" font-size="56" font-weight="900" letter-spacing="-1">3M</text></svg></div>
-
+      <div class="brand-item"><span>BOSCH</span></div>
+      <div class="brand-item"><span>MOBIL 1</span></div>
+      <div class="brand-item"><span>ACDELCO</span></div>
+      <div class="brand-item"><span>MONROE</span></div>
+      <div class="brand-item"><span>GATES</span></div>
+      <div class="brand-item"><span>DORMAN</span></div>
+      <div class="brand-item"><span>MOOG</span></div>
+      <div class="brand-item"><span>DENSO</span></div>
+      <div class="brand-item"><span>NGK</span></div>
+      <div class="brand-item"><span>CASTROL</span></div>
+      <div class="brand-item"><span>MOTORCRAFT</span></div>
+      <div class="brand-item"><span>RAYBESTOS</span></div>
+      <div class="brand-item"><span>FEL-PRO</span></div>
+      <div class="brand-item"><span>WD-40</span></div>
+      <div class="brand-item"><span>3M</span></div>
+      <!-- Duplicate set for seamless infinite loop -->
+      <div class="brand-item"><span>BOSCH</span></div>
+      <div class="brand-item"><span>MOBIL 1</span></div>
+      <div class="brand-item"><span>ACDELCO</span></div>
+      <div class="brand-item"><span>MONROE</span></div>
+      <div class="brand-item"><span>GATES</span></div>
+      <div class="brand-item"><span>DORMAN</span></div>
+      <div class="brand-item"><span>MOOG</span></div>
+      <div class="brand-item"><span>DENSO</span></div>
+      <div class="brand-item"><span>NGK</span></div>
+      <div class="brand-item"><span>CASTROL</span></div>
+      <div class="brand-item"><span>MOTORCRAFT</span></div>
+      <div class="brand-item"><span>RAYBESTOS</span></div>
+      <div class="brand-item"><span>FEL-PRO</span></div>
+      <div class="brand-item"><span>WD-40</span></div>
+      <div class="brand-item"><span>3M</span></div>
     </div>
   </div>
 
-  <!-- ── Trust Bar ── -->
+    <!-- ── Trust Bar ── -->
   <div class="trust-bar">
     <div class="trust-item">Honest Pricing</div>
     <div class="trust-item">Certified Technicians</div>
